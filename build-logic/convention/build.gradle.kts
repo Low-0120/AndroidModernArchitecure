@@ -24,6 +24,12 @@ dependencies {
     compileOnly(libs.room.gradlePlugin)
     implementation(libs.truth)
 }
+tasks {
+    validatePlugins {
+        enableStricterValidation = true
+        failOnWarning = true
+    }
+}
 gradlePlugin {
     plugins {
         register("androidApplicationCompose") {

@@ -1,11 +1,20 @@
+import com.example.modern_architecture_template.BaseBuildType
+
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.modernarchitercture.android.application)
+    alias(libs.plugins.modernarchitercture.android.application.compose)
+    alias(libs.plugins.modernarchitercture.android.application.flavors)
+    alias(libs.plugins.modernarchitercture.android.application.jacoco)
+    alias(libs.plugins.modernarchitercture.android.hilt)
+//    alias(libs.plugins.modernarchitercture.android.application.firebase)
+    id("com.google.android.gms.oss-licenses-plugin")
+    alias(libs.plugins.baselineprofile)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
     namespace = "com.example.modern_architecture_template"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.modern_architecture_template"
@@ -21,26 +30,16 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = BaseBuildType.DEBUG.applicationIdSuffix
+        }
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
     }
     packaging {
         resources {
@@ -50,6 +49,7 @@ android {
 }
 
 dependencies {
+    ksp("com.google.devtools.ksp:symbol-processing-api:1.8.10-1.0.0")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
