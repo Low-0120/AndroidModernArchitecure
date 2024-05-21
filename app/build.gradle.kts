@@ -32,6 +32,7 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix = BaseBuildType.DEBUG.applicationIdSuffix
+
         }
         release {
             isMinifyEnabled = true
@@ -39,6 +40,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            baselineProfile.automaticGenerationDuringBuild = true
         }
     }
     packaging {
@@ -52,7 +54,14 @@ dependencies {
     //TODO:: feature impl
 
     //TODO:: core impl
-    
+    implementation(projects.core.common)
+    implementation(projects.core.ui)
+    implementation(projects.core.designsystem)
+    implementation(projects.core.data)
+    implementation(projects.core.model)
+    implementation(projects.core.analytics)
+//    implementation(projects.sync.work)
+
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3.adaptive)
     implementation(libs.androidx.compose.material3.adaptive.layout)
