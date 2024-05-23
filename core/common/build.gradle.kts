@@ -9,6 +9,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.test.ext)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
 }

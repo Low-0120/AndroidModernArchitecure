@@ -10,7 +10,7 @@ android {
     buildFeatures {
         buildConfig = true
     }
-    namespace = "com.google.samples.apps.nowinandroid.core.network"
+    namespace = "com.google.samples.apps.modernarchitercture.core.network"
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
@@ -33,6 +33,7 @@ dependencies {
     implementation(libs.okhttp.logging)
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.kotlin.serialization)
+    implementation(libs.androidx.test.ext)
 
     testImplementation(libs.kotlinx.coroutines.test)
 }

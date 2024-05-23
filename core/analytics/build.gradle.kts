@@ -10,6 +10,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.test.ext)
     prodImplementation(platform(libs.firebase.bom))
     prodImplementation(libs.firebase.analytics)
 }

@@ -24,9 +24,9 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             }
 
             dependencies{
-                //TODO::Core追加時追加
-//                add("implementation", project(":core:ui"))
-//                add("implementation", project(":core:designsystem"))
+
+                add("implementation", project(":core:ui"))
+                add("implementation", project(":core:designsystem"))
 
                 add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())

@@ -36,4 +36,5 @@ androidComponents.beforeVariants {
 
 dependencies {
     api(libs.protobuf.kotlin.lite)
+    implementation(libs.androidx.test.ext)
 }

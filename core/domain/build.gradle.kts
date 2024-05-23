@@ -13,6 +13,7 @@ dependencies {
     api(projects.core.model)
 
     implementation(libs.javax.inject)
+    implementation(libs.androidx.test.ext)
 
     testImplementation(projects.core.testing)
 
