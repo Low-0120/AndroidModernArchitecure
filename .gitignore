@@ -23,6 +23,10 @@ local.properties
 
 # Windows thumbnail db
 .DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
 
 # IDEA/Android Studio project files, because
 # the project can be imported from settings.gradle.kts
@@ -37,9 +41,23 @@ local.properties
 
 # Gradle cache
 .gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
 
 # Sandbox stuff
 _sandbox
 
 # Android Studio captures folder
 captures/
+
+/build/
+*.jar
+*.war
+*.ear
+*.bin
+
