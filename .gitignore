@@ -23,6 +23,8 @@ local.properties
 
 # Windows thumbnail db
 .DS_Store
+
+# Android specific files
 /build
 /captures
 .externalNativeBuild
@@ -55,6 +57,7 @@ _sandbox
 # Android Studio captures folder
 captures/
 
+# Ignore build output
 /build/
 *.jar
 *.war
