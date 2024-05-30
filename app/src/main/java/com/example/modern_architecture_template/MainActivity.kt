@@ -10,9 +10,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.metrics.performance.JankStats
 import com.example.modern_architecture_template.ui.theme.ModernarchitecturetemplateTheme
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var lazyStats: dagger.Lazy<JankStats>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -26,6 +34,16 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        lazyStats.get().isTrackingEnabled = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        lazyStats.get().isTrackingEnabled = false
     }
 }
 
