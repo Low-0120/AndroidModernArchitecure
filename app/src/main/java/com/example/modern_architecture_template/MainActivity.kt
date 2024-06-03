@@ -28,6 +28,10 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var timeZoneMonitor: TimeZoneMonitor
+// AnalyticsHelper利用時解除
+//    @Inject
+//    lateinit var analyticsHelper :AnalyticsHelper
+
 
 
 
