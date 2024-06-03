@@ -1,5 +1,6 @@
 package com.example.modern_architecture_template
 
+import analytics.AnalyticsHelper
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -29,9 +30,9 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var timeZoneMonitor: TimeZoneMonitor
-// AnalyticsHelper利用時解除
-//    @Inject
-//    lateinit var analyticsHelper :AnalyticsHelper
+
+    @Inject
+    lateinit var analyticsHelper : AnalyticsHelper
 
 
 val viewModel :MainActivityViewModel by viewModels()
