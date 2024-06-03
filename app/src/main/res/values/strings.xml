@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">modern-architecture-template</string>
+    <string name="app_central">app_central</string>
+    <string name="app_my_page">app_my_page</string>
 </resources>

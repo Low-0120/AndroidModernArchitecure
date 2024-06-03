@@ -66,6 +66,10 @@ android {
 dependencies {
     //TODO:: feature impl
 
+    implementation(projects.feature.main)
+    implementation(projects.feature.central)
+    implementation(projects.feature.mypage)
+
     implementation(projects.core.common)
     implementation(projects.core.ui)
     implementation(projects.core.designsystem)
