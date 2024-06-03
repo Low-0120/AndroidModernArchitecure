@@ -3,7 +3,7 @@ package com.example.modern_architecture_template.navigation
 import androidx.compose.material.icons.Icons
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.google.samples.apps.modernarchitercture.R
-import designsystem.icon.BaseIcon
+import designsystem.icon.BaseIcons
 
 enum class TopLevelDestination(
     val selectedIcon: ImageVector,
@@ -12,21 +12,21 @@ enum class TopLevelDestination(
     val titleTextId:Int,
 ) {
     MAIN(
-        selectedIcon = BaseIcon.Main,
-        unselectedIcon = BaseIcon.Main,
+        selectedIcon = BaseIcons.Bookmarks,
+        unselectedIcon = BaseIcons.Bookmarks,
         iconText = R.string.app_name,
         titleTextId = R.string.app_name
     ),
     CENTRAL(
-        selectedIcon = BaseIcon.Central,
-        unselectedIcon = BaseIcon.Central,
+        selectedIcon = BaseIcons.Add,
+        unselectedIcon = BaseIcons.Add,
         iconText = R.string.app_central,
         titleTextId = R.string.app_central
     ),
     MY_PAGE(
-        selectedIcon = BaseIcon.Central,
-        unselectedIcon = BaseIcon.Central,
-        iconText = R.string.app_central,
-        titleTextId = R.string.app_central
+        selectedIcon = BaseIcons.Settings,
+        unselectedIcon = BaseIcons.Settings,
+        iconText = R.string.app_my_page,
+        titleTextId = R.string.app_my_page,
     )
 }

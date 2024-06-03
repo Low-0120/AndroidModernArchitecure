@@ -68,11 +68,11 @@ class BaseAppState(
         }
 
     val isOffline = networkMonitor.isOnline
-        .map { Boolean::not }
+        .map(Boolean::not)
         .stateIn(
             scope = coroutineScope,
             started = SharingStarted.WhileSubscribed(5_000),
-            initialValue = false
+            initialValue = false,
         )
 
     val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.entries

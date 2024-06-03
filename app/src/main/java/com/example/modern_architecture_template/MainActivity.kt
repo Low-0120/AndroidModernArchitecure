@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -20,9 +21,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.metrics.performance.JankStats
+import com.example.modern_architecture_template.ui.compose.BaseApp
 import com.example.modern_architecture_template.ui.compose.rememberBaseAppState
 import com.example.modern_architecture_template.ui.theme.ModernarchitecturetemplateTheme
 import dagger.hilt.android.AndroidEntryPoint
+import designsystem.theme.BaseTheme
 import util.NetworkMonitor
 import util.TimeZoneMonitor
 import javax.inject.Inject
@@ -68,19 +71,25 @@ class MainActivity : ComponentActivity() {
                 LocalAnalyticsHelper provides analyticsHelper,
                 LocalTimeZone provides  currentTimeZone
             ){
+                BaseTheme{
+                    BaseApp(appState = appState)
 
-            }
-
-
-            ModernarchitecturetemplateTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
                 }
+
+
+
             }
+
+
+//            ModernarchitecturetemplateTheme {
+//                // A surface container using the 'background' color from the theme
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colorScheme.background
+//                ) {
+//                    Greeting("Android")
+//                }
+//            }
         }
     }
 
