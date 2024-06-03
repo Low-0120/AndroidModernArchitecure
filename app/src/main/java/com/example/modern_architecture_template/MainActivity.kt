@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.metrics.performance.JankStats
 import com.example.modern_architecture_template.ui.theme.ModernarchitecturetemplateTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,10 +36,18 @@ class MainActivity : ComponentActivity() {
     lateinit var analyticsHelper : AnalyticsHelper
 
 
-val viewModel :MainActivityViewModel by viewModels()
+    val viewModel :MainActivityViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
+
+       splashScreen.setKeepOnScreenCondition{
+           System.currentTimeMillis() <  10000
+           //TODO:: viewmodelのユーザーデータのフェッチ感知させる
+       }
+
         setContent {
             ModernarchitecturetemplateTheme {
                 // A surface container using the 'background' color from the theme
