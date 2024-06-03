@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Modernarchitecturetemplate"
         tools:targetApi="31">
+
         <activity
             android:name="com.example.modern_architecture_template.MainActivity"
             android:exported="true"

@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.metrics.performance.JankStats
 import com.example.modern_architecture_template.ui.theme.ModernarchitecturetemplateTheme
 import dagger.hilt.android.AndroidEntryPoint
+import util.NetworkMonitor
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -20,6 +21,11 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var lazyStats: dagger.Lazy<JankStats>
+
+    @Inject
+    lateinit var networkMonitor: NetworkMonitor
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
