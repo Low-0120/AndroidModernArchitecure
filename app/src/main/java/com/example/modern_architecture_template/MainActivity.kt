@@ -14,6 +14,7 @@ import androidx.metrics.performance.JankStats
 import com.example.modern_architecture_template.ui.theme.ModernarchitecturetemplateTheme
 import dagger.hilt.android.AndroidEntryPoint
 import util.NetworkMonitor
+import util.TimeZoneMonitor
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -24,6 +25,9 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var networkMonitor: NetworkMonitor
+
+    @Inject
+    lateinit var timeZoneMonitor: TimeZoneMonitor
 
 
 
