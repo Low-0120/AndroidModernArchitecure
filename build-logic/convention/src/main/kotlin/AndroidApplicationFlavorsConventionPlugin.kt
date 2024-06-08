@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.example.modern_architecture_template.configureBuildFeatures
 import com.example.modern_architecture_template.configureFlavors
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -8,7 +9,8 @@ class AndroidApplicationFlavorsConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             extensions.configure<ApplicationExtension> {
-                configureFlavors(this)
+                configureFlavors(this,target)
+                configureBuildFeatures(this)
             }
         }
     }
