@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.modernarchitercture.android.library)
     alias(libs.plugins.modernarchitercture.android.library.jacoco)
@@ -7,6 +10,28 @@ plugins {
 }
 
 android {
+
+    buildTypes {
+        getByName("debug") {
+            buildConfigField(
+                "String",
+                "API_BASE_URL",
+                "\"${getProperty("secrets.debug.properties", "BASE_URL")}\""
+            )
+        }
+        getByName("release") {
+            buildConfigField(
+                "String",
+                "API_BASE_URL",
+                "\"${getProperty("secrets.release.properties", "BASE_URL")}\""
+            )
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
     buildFeatures {
         buildConfig = true
     }
@@ -36,4 +61,10 @@ dependencies {
     implementation(libs.androidx.test.ext)
 
     testImplementation(libs.kotlinx.coroutines.test)
+}
+
+fun getProperty(fileName: String, propertyName: String): String {
+    val properties = Properties()
+    properties.load(FileInputStream(rootProject.file(fileName)))
+    return properties.getProperty(propertyName)
 }

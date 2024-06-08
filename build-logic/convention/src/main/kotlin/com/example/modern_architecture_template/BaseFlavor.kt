@@ -25,9 +25,6 @@ enum class BaseFlavor(val dimension: FlavorDimension, val applicationIdSuffix: S
 fun configureBuildFeatures(applicationExtension: ApplicationExtension) {
     applicationExtension.buildFeatures.buildConfig = true
 }
- fun configureBuildFeatures(libraryExtension: LibraryExtension) {
-    libraryExtension.buildFeatures.buildConfig = true
-}
 
 fun configureFlavors(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
