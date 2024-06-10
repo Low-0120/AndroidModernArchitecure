@@ -4,9 +4,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.central.CentralScreen
 import com.example.central.navigation.CENTRAL_ROUTE
+import com.example.main.MainScreen
 import com.example.main.navigation.MAIN_ROUTE
 import com.example.modern_architecture_template.ui.compose.BaseAppState
+import com.example.mypage.MyPageScreen
 import com.example.mypage.navigation.MY_PAGE_ROUTE
 
 @Composable
@@ -23,13 +26,15 @@ fun BaseNavHost(
         modifier = modifier,
     ) {
         composable(MAIN_ROUTE) {
-
+            MainScreen()
         }
         composable(CENTRAL_ROUTE) {
+            CentralScreen()
 
         }
         composable(MY_PAGE_ROUTE) {
 
+            MyPageScreen()
         }
     }
 }

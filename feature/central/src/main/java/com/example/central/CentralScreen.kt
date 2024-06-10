@@ -7,7 +7,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 
 
 @Composable
-internal fun MainScreen( modifier: Modifier = Modifier,viewModel : CentralViewModel = hiltViewModel()){
+ fun CentralScreen( modifier: Modifier = Modifier,viewModel : CentralViewModel = hiltViewModel()){
 
     Greeting(name = "Central")
 }

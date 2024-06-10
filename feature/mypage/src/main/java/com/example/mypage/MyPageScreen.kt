@@ -6,9 +6,9 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-internal fun MyPageScreen(modifier: Modifier = Modifier, viewModel : MyPageViewModel = hiltViewModel()){
+ fun MyPageScreen(modifier: Modifier = Modifier, viewModel : MyPageViewModel = hiltViewModel()){
 
-    Greeting(name = "Main")
+    Greeting(name = "Mypage")
 }
 
 @Composable
