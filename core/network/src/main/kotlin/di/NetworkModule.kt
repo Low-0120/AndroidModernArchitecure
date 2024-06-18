@@ -1,13 +1,11 @@
 package di
 
+import com.example.core.network.firebase.TokenProvider
 import com.google.samples.apps.modernarchitercture.core.network.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import data.AuthenticationData
-import data.DefaultTokenProvider
-import data.TokenProvider
+import dagger.hilt.android.components.ActivityComponent
 import kotlinx.serialization.json.Json
 import okhttp3.Authenticator
 import okhttp3.Interceptor
@@ -20,16 +18,10 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ActivityComponent::class)
 object NetworkModule {
 
     private const val AUTH_HEADER_KEY = "Authorization"
-
-    @Provides
-    @Singleton
-    fun provideTokenProvider(): TokenProvider {
-        return DefaultTokenProvider()
-    }
 
     @Provides
     @Singleton

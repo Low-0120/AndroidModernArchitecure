@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.modernarchitercture.android.application.flavors)
     alias(libs.plugins.modernarchitercture.android.application.jacoco)
     alias(libs.plugins.modernarchitercture.android.hilt)
-//    alias(libs.plugins.modernarchitercture.android.application.firebase)
+    alias(libs.plugins.modernarchitercture.android.application.firebase)
     id("com.google.android.gms.oss-licenses-plugin")
     alias(libs.plugins.baselineprofile)
     alias(libs.plugins.roborazzi)
@@ -76,6 +76,7 @@ dependencies {
     implementation(projects.core.data)
     implementation(projects.core.model)
     implementation(projects.core.analytics)
+    implementation(projects.core.network)
 //    implementation(projects.sync.work)
 
     implementation(libs.androidx.activity.compose)
@@ -92,8 +93,11 @@ dependencies {
     implementation(libs.androidx.profileinstaller)
     implementation(libs.androidx.tracing.ktx)
     implementation(libs.androidx.window.core)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.guava)
     implementation(libs.coil.kt)
+    implementation(libs.firebase.auth.ktx)
 
     ksp(libs.hilt.compiler)
 
@@ -135,3 +139,4 @@ baselineProfile {
 dependencyGuard {
     configuration("prodReleaseRuntimeClasspath")
 }
+

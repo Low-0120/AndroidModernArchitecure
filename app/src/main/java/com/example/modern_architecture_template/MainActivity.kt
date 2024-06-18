@@ -4,6 +4,7 @@ import LocalTimeZone
 import analytics.AnalyticsHelper
 import analytics.LocalAnalyticsHelper
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -16,16 +17,23 @@ import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.metrics.performance.JankStats
 import com.example.modern_architecture_template.ui.compose.BaseApp
 import com.example.modern_architecture_template.ui.compose.rememberBaseAppState
 import com.example.modern_architecture_template.ui.theme.ModernarchitecturetemplateTheme
 import dagger.hilt.android.AndroidEntryPoint
 import designsystem.theme.BaseTheme
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import util.NetworkMonitor
 import util.TimeZoneMonitor
 import javax.inject.Inject
@@ -45,7 +53,6 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var analyticsHelper: AnalyticsHelper
 
-
     val viewModel: MainActivityViewModel by viewModels()
 
 
@@ -53,9 +60,32 @@ class MainActivity : ComponentActivity() {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
 
+        var uiState: MainActivityUiState by mutableStateOf(MainActivityUiState.Loading)
+
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.uiState
+                    .onEach { uiState = it }
+                    .collect { Log.d("MainActivity", "onCreate: $it") }
+            }
+        }
+
         splashScreen.setKeepOnScreenCondition {
-            System.currentTimeMillis() < 10000
-            //TODO:: viewmodelのユーザーデータのフェッチ感知させる
+            when (uiState) {
+                MainActivityUiState.Loading -> true.also {
+                    Log.d(
+                        "MainActivity",
+                        "splashScreen:true"
+                    )
+                }
+
+                is MainActivityUiState.Success -> false.also {
+                    Log.d(
+                        "MainActivity",
+                        "splashScreen:false"
+                    )
+                }
+            }
         }
         enableEdgeToEdge()
         setContent {
@@ -69,15 +99,12 @@ class MainActivity : ComponentActivity() {
 
             CompositionLocalProvider(
                 LocalAnalyticsHelper provides analyticsHelper,
-                LocalTimeZone provides  currentTimeZone
-            ){
-                BaseTheme{
+                LocalTimeZone provides currentTimeZone
+            ) {
+                BaseTheme {
                     BaseApp(appState = appState)
 
                 }
-
-
-
             }
 
         }
@@ -91,21 +118,5 @@ class MainActivity : ComponentActivity() {
     override fun onPause() {
         super.onPause()
         lazyStats.get().isTrackingEnabled = false
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ModernarchitecturetemplateTheme {
-        Greeting("Android")
     }
 }

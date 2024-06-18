@@ -1,0 +1,163 @@
+{
+  "project_info": {
+    "project_number": "696038732111",
+    "project_id": "androidmodernarchitecure-dev",
+    "storage_bucket": "androidmodernarchitecure-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696038732111:android:fdcf78f0e037379303153a",
+        "android_client_info": {
+          "package_name": "com.example.modern_architecture_template"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSiKGlzuE13xdJwestIxAqKIRQZ_UJNvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696038732111:android:39fed6b1dfad61d803153a",
+        "android_client_info": {
+          "package_name": "com.example.modern_architecture_template.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSiKGlzuE13xdJwestIxAqKIRQZ_UJNvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696038732111:android:a72ae1485cccbf1103153a",
+        "android_client_info": {
+          "package_name": "com.example.modern_architecture_template.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSiKGlzuE13xdJwestIxAqKIRQZ_UJNvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696038732111:android:18fb142e00f85cbc03153a",
+        "android_client_info": {
+          "package_name": "com.example.modern_architecture_template.demo.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696038732111-ffgedm45d2phpj3jiv3rl6oe57ho7r6a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.modern_architecture_template.demo.debug",
+            "certificate_hash": "be5dab1f6d49fc5bce11a3eee9b4793c1c3e205b"
+          }
+        },
+        {
+          "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSiKGlzuE13xdJwestIxAqKIRQZ_UJNvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696038732111:android:e1ad0e823cf79ded03153a",
+        "android_client_info": {
+          "package_name": "com.example.modern_architecture_template.prod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSiKGlzuE13xdJwestIxAqKIRQZ_UJNvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696038732111-kpmnum0ar07vvlhiseffn3934ranf7m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

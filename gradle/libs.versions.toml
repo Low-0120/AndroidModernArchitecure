@@ -114,6 +114,7 @@ coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "
 coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-auth-ktx = {group = "com.google.firebase" , name = "firebase-auth-ktx" }
 firebase-cloud-messaging = { group = "com.google.firebase", name = "firebase-messaging-ktx" }
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
 firebase-performance = { group = "com.google.firebase", name = "firebase-perf-ktx" }
@@ -126,6 +127,8 @@ hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.r
 hilt-ext-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltExt" }
 javax-inject = { module = "javax.inject:javax.inject", version = "1" }
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
+kotlinx-coroutines-android ={group ="org.jetbrains.kotlinx",name= "kotlinx-coroutines-android",version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-core = {group="org.jetbrains.kotlinx",name = "kotlinx-coroutines-core",version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }

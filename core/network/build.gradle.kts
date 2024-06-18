@@ -25,11 +25,11 @@ android {
                 "API_BASE_URL",
                 "\"${getProperty("secrets.release.properties", "BASE_URL")}\""
             )
-            isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+//            isMinifyEnabled = true
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro"
+//            )
         }
     }
     buildFeatures {
@@ -59,7 +59,6 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.kotlin.serialization)
     implementation(libs.androidx.test.ext)
-
     testImplementation(libs.kotlinx.coroutines.test)
 }
 
