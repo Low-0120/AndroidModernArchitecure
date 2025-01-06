@@ -31,7 +31,7 @@ object AppModule {
             val tokenResult = checkAuthType(auth)
             tokenResult.onSuccess { token ->
                 tokenProvider.setToken(token)
-                Log.d("AppModule", "Firebase TokenLogging Success")
+                Log.d("o", "Firebase TokenLogging Success")
             }.onFailure {
                 val anonymousToken = signInAnonymouslyAndGetToken(auth)
                 tokenProvider.setToken(anonymousToken)
